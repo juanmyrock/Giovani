@@ -35,6 +35,7 @@
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
                                 </div>
                                 <div class="carousel-inner h-100">
                                     <div class="carousel-item active h-100">
@@ -42,6 +43,13 @@
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Navidad 2025</h5>
                                             <p>Navidad dentro de la pancita</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/img/eco1.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="Navidad">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Ecografías</h5>
+                                            <p>¿A quién me parezco?</p>
                                         </div>
                                     </div>
                                     <div class="carousel-item h-100">
@@ -64,30 +72,95 @@
                         </div>
                     </section>
                 </div>
-                <div class="div2"> </div>
-            </div>
-
-
-            <div class="row info-box">
-                <div class="col-12">
-                    <h3 class="pooh-font">📍 ¿Dónde?</h3>
-                    <p>En el Bosque de los Cien Acres (O nuestra casa: Calle Falsa 123)</p>
+                <div class="div2"> 
+                    <img src="assets/img/invitacionGio.jpeg" class="invitacion-img" alt="Gio Invitacion">
                 </div>
             </div>
 
-            <div class="row info-box">
-                <div class="col-12">
-                    <h3 class="pooh-font">⏰ ¿Cuándo?</h3>
-                    <p>Sábado 20 de Mayo - 16:30 hs</p>
+            <div class="parent2 mt-5">
+                <div class="row align-items-stretch"> 
+                    <div class="col-md-6 d-flex flex-column justify-content-between">
+
+                        <div class="info-box shadow-sm">
+                            <h3 class="pooh-font">📍 ¿Dónde?</h3>
+                            <p>En un lugar mágico de mi familia.<br><strong>(Galeano 5050, Canning)</strong></p>
+                        </div>
+
+                        <div class="info-box shadow-sm">
+                            <h3 class="pooh-font">⏰ ¿Cuándo?</h3>
+                            <p>Domingo 08 de Marzo - 15:00 hs</p>
+                        </div>
+
+                        
+                        <div class="music-browser text-center">
+                            <h3 class="pooh-font">🎵 Melodías del Bosque</h3>
+                            <div class="music-card shadow-sm d-flex flex-column align-items-center p-3 w-100">
+                                <audio id="bg-music" loop></audio>
+                                
+                                <div class="now-playing mb-3 text-center">
+                                    <small class="text-muted d-block">Sonando ahora:</small>
+                                    <span id="track-title" class="fw-bold">Floricienta - Hay Cuento</span>
+                                </div>
+
+                                <div class="music-controls d-flex align-items-center justify-content-center">
+                                    <button id="prev-btn" class="btn btn-honey-music mx-1">
+                                        <span>⏮️</span>
+                                    </button>
+                                    
+                                    <button id="music-control" class="btn btn-honey-music mx-1">
+                                        <span id="music-icon">▶️</span>
+                                    </button>
+                                    
+                                    <button id="next-btn" class="btn btn-honey-music mx-1">
+                                        <span>⏭️</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <div class="map-container shadow h-100">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.1328476834015!2d-58.5085448!3d-34.8906059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd13768853f6d%3A0x7d28c3093282210!2sGaleano%205050%2C%20B1801%20Canning%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1700000000000" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; min-height: 400px;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
+            
             <div class="bee bee-1">🐝</div>
             <div class="bee bee-2">🐝</div>
-            <div class="text-center mt-5">
-                <button class="btn btn-pooh px-5 shadow">Confirmar Asistencia</button>
+
+
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <div class="rsvp-container p-4 shadow-sm">
+                        <h2 class="pooh-font mb-3">🍯 ¿Nos acompañas?</h2>
+                        <p>Completa tus datos para enviarnos la confirmación por WhatsApp:</p>
+                        
+                        <div class="rsvp-form mx-auto" style="max-width: 400px;">
+                            <input type="text" id="rsvp-name" class="form-control mb-2 pooh-input" placeholder="Nombre y Apellido">
+
+                            <button onclick="enviarConfirmacion()" class="btn-confirm w-100">
+                                Confirmar por WhatsApp
+                            </button>
+                        </div>
+                        <p class="text-muted mt-3 small">¡Te esperamos en Canning el 8 de Marzo!</p>
+                    </div>
+                </div>
             </div>
+
+            
+
+
+
+
 
             <div id="seccion-regalos" class="mt-5 pt-4 border-top">
                 <h2 class="pooh-font">Lista de Miel (Regalos)</h2>
@@ -104,5 +177,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
