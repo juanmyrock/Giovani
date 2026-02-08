@@ -267,10 +267,6 @@ h1, h2 {
 }
 
 
-
-
-
-
 .bee {
     position: absolute;
     font-size: 1.5rem;
@@ -313,4 +309,61 @@ h1, h2 {
     text-decoration: line-through;
     color: #a1887f;
     opacity: 0.6;
+}
+
+
+/* Media Query para dispositivos móviles (Celulares) */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste de Tarjeta Principal */
+    .invitation-card {
+        margin: 10px;
+        padding: 10px;
+        border-width: 8px; /* Madera un poco más fina */
+    }
+
+    /* 2. Título Principal */
+    .gio-title {
+        font-size: 3rem; /* Más chico para que no rompa en 3 líneas */
+    }
+
+    /* 3. Grid de Fotos (.parent) */
+    .parent {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: auto;
+        grid-row-gap: 10px;
+        
+    }
+
+    .div1, .div2 {
+        grid-area: auto; /* Dejamos que el flujo sea natural */
+        height: 100%; /* Altura fija para mobile */
+    }
+
+    /* 4. Sección de Mapa e Info (.parent2) */
+    .parent2 .row {
+        flex-direction: column; /* Apilamos info y mapa */
+    }
+
+    .map-container {
+        height: 300px; /* Evitamos que el mapa sea infinito */
+        margin-top: 20px;
+    }
+
+    /* 5. Ajustes de Reproductor de Música */
+    .music-card {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 15px !important;
+    }
+
+    .music-controls {
+        margin-top: 15px;
+    }
+
+    /* 6. Imagen de Ecografía */
+    .profile-img {
+        width: 200px;
+        height: 180px;
+    }
 }
