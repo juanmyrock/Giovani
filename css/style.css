@@ -15,6 +15,79 @@
     --wood-dark: #6c4b2f;
 }
 
+.splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro traslúcido */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.splash-content {
+    background-color: var(--honey-bg);
+    padding: 20px; /* Aumentamos el padding para que respire */
+    border-radius: 30px;
+    border: 8px solid var(--wood-dark);
+    max-width: 90%;
+    width: 300px;
+    height: 420px; /* Aumentamos ligeramente para dar aire */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    text-align: center;
+    
+    /* Usamos flexbox para centrar el contenido verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Ajuste del título para que no se escape */
+.splash-content h1 {
+    font-size: 1.8rem !important; /* Adiós al display-4 que es gigante */
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+.splash-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.splash-img {
+    width: 120px; /* Un poquito más grande ya que tenemos el espacio */
+    margin-bottom: 15px;
+    animation: float 3s infinite ease-in-out;
+}
+body.modal-open {
+    overflow: hidden;
+}
+.splash-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9); /* Efecto de que se achica al cerrar */
+}
+.btn-pooh {
+    background-color: var(--pooh-red);
+    border-bottom: 4px solid #854207;
+    color: white;
+    border-radius: 25px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+.btn-pooh:hover {
+    transform: scale(1.05);
+    background-color: #b71c1c;
+    color: white;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
 body {
     background-color: rgba(249, 228, 135, 0.383);
 }
@@ -196,22 +269,6 @@ h1, h2 {
     height: 100%; /* Cambiado de 350px a 100% */
     display: block;
     flex-grow: 1; /* Asegura que crezca */
-}
-
-.btn-pooh {
-    background-color: #e77905;
-    border-bottom: 4px solid #854207;
-    color: white;
-    border-radius: 25px;
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.5rem;
-    transition: transform 0.2s;
-}
-
-.btn-pooh:hover {
-    transform: scale(1.05);
-    background-color: #b71c1c;
-    color: white;
 }
 
 .rsvp-container {

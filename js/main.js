@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const splash = document.getElementById('splash-screen');
+    const btnEntrar = document.getElementById('btn-entrar');
+
+    btnEntrar.addEventListener('click', () => {
+        // 1. Iniciamos la música (la interacción del usuario ya es válida)
+        playTrack(); 
+        
+        // 2. Ocultamos el splash
+        splash.classList.add('splash-hidden');
+        
+        // 3. (Opcional) Guardamos en sessionStorage para que si recargan no aparezca de nuevo
+        sessionStorage.setItem('splashVisto', 'true');
+    });
+
+    // Si ya lo vio en esta sesión, lo ocultamos directo
+    if(sessionStorage.getItem('splashVisto') === 'true') {
+        splash.style.display = 'none';
+    }
+});
+
+
+
 const playlist = [
     {
         title: "Floricienta - Hay Cuento",
@@ -86,3 +109,22 @@ function enviarConfirmacion() {
     // Redirigimos a WhatsApp
     window.open(`https://wa.me/${telefono}?text=${mensajeCodificado}`, '_blank');
 }
+
+// Variable para controlar que solo se dispare una vez
+let musicStarted = false;
+
+function iniciarMusicaAutomaticamente() {
+    if (!musicStarted) {
+        playTrack(); // Llama a tu función existente
+        musicStarted = true;
+        // Removemos los listeners para no saturar
+        document.removeEventListener('click', iniciarMusicaAutomaticamente);
+        document.removeEventListener('scroll', iniciarMusicaAutomaticamente);
+        document.removeEventListener('touchstart', iniciarMusicaAutomaticamente);
+    }
+}
+
+// Escuchamos cualquier interacción inicial del usuario
+document.addEventListener('click', iniciarMusicaAutomaticamente);
+document.addEventListener('scroll', iniciarMusicaAutomaticamente);
+document.addEventListener('touchstart', iniciarMusicaAutomaticamente);
