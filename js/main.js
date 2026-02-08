@@ -87,6 +87,13 @@ prevBtn.addEventListener('click', () => {
 // Cargar la primera canción al iniciar
 loadTrack(currentTrackIndex);
 
+// Evento para que cuando termine una canción, pase automáticamente a la siguiente
+music.addEventListener('ended', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    loadTrack(currentTrackIndex);
+    playTrack();
+});
+
 
 
 function enviarConfirmacion() {
