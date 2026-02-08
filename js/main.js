@@ -98,7 +98,7 @@ music.addEventListener('ended', () => {
 
 function enviarConfirmacion() {
     const nombre = document.getElementById('rsvp-name').value;
-    const telefono = "5491126596458"; // Tu número aquí
+    const telefono = "5491126843675"; // Tu número aquí
 
     if (nombre.trim() === "") {
         alert("Por favor, dinos tu nombre para saber quién eres.");
